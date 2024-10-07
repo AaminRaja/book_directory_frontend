@@ -1,0 +1,14 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightblue;
+    height: 110px;
+}
+
+.nav a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 30px;
+    color:darkblue
+}
