@@ -6,9 +6,7 @@ const NavBar = () => {
   return (
     <nav className="nav">
       <Link to='/searching'>Search Books</Link>
-      {/* <Link to='/sidebar'>Select Author and Category</Link> */}
-      <Link to='/sidebar'>Select Author</Link>
-      <Link to='/sidebar'>Malayalam</Link>
+      <Link to='/sidebar'>Select Author and Category</Link>
     </nav>
   )
 }
