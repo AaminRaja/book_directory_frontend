@@ -1,0 +1,56 @@
+.bottomNavBarContainer{
+    /* border: 1px solid red; */
+    display: flex;
+    background-color: #F2EEE3;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 80px;
+}
+
+.sortTitleDiv{
+    background-color: #970C0C;
+    width: 10%;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sortTitle{
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    /* font-family: "Nerko One", serif; */
+    font-family: "Red Hat Display", serif;
+}
+
+.linksDiv{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0px 30px;
+    gap: 30px;
+}
+
+.singleLinkDiv{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid transparent;
+    padding: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bottomRedBorder{
+    border-bottom: 3px solid #970C0C;
+}
+
+.link{
+    text-decoration: none;
+    font-weight: 700;
+    color: #970C0C;
+    font-family: "Red Hat Display", serif;
+}

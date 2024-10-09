@@ -2,19 +2,26 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './Components/NavBar';
-import Searching from './Components/Searching';
-import SelectBooks from './Components/SelectBooks';
 import AllBooks from './Components/AllBooks';
+import BottomNavBar from './Components/BottomNavBar';
+import Authuthors from './Components/Authuthors';
+import Categories from './Components/Categories';
+import Languages from './Components/Languages';
+import Publishers from './Components/Publishers';
+import { useEffect, useState } from 'react';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <NavBar />
+        <BottomNavBar />
         <Routes>
           <Route path="/" element={<AllBooks />} />
-          <Route path="/searching" element={<Searching />} />
-          <Route path="/sidebar" element={<SelectBooks />} />
+          <Route path='/authors' element={<Authuthors />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/languages' element={<Languages />} />
+          <Route path='/publishers' element={<Publishers />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,0 +1,65 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: mediumaquamarine;
+    height: 80px;
+    padding: 0px 30px;
+    /* position: sticky; */
+    width: 100%;
+    /* position: relative; */
+    position: fixed;
+}
+
+.logoDiv{
+    cursor: pointer;
+}
+
+.logo{
+    font-size: 25px;
+    letter-spacing: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logoBook{
+    color: rgb(4, 88, 4);
+}
+
+.logoDirectory{
+    color: rgb(5, 5, 40);
+}
+
+.inputBtnDiv{
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100%;
+}
+
+.input{
+    border-color: #045804;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    color: #045804;
+    font-size: 15px;
+    height: 50%;
+}
+
+.input::placeholder{
+    color: #045804;
+}
+
+.button{
+    height: 50%;
+    border: none;
+    background-color: #151566;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 15px;
+    cursor: pointer;
+}

@@ -1,0 +1,258 @@
+.authorsContainer{
+    /* border: 2px solid red; */
+    min-height: 700px;
+    height: fit-content;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    /* position: relative; */
+    top: 120px;
+    z-index: -1;
+}
+
+/* ? Sidebar */
+
+.sideBar{
+    /* border: 2px solid green; */
+    width: 20%;
+    /* height: 100%; */
+    /* position: absolute; */
+    /* box-shadow: 1px 1px 10px 1px gray; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: -1;
+}
+
+.title{
+    font-family: "Play", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #0e0e4b;
+}
+
+.searchDiv{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.input{
+    border: 1px solid gray;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    color: #045804;
+    font-size: 15px;
+    height: 40%;
+}
+
+.input::placeholder{
+    color: gray;
+}
+
+.button{
+    height: 40%;
+    border: none;
+    background-color: #151566;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 50%;
+    cursor: pointer;
+}
+
+.tenAuthorsDiv{
+    /* border: 1px solid red; */
+    /* width: 500px; */
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: start;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+    padding: 8px;
+    background-color: lightblue;
+    border-radius: 8px;
+}
+
+.tenAuthorsSingle{
+    font-family: "Play", serif;
+    color: #060629;
+    transition: all 0.1s ease-in-out;
+}
+
+.tenAuthorsSingle:hover{
+    color: #045804;
+}
+
+.tenAuthorsButton{
+    color: #060629;
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.tenAuthorsButton:hover{
+    background-color: rgb(165, 155, 155);
+    color: black;
+}
+
+/* ?????????????????????????????????????? */
+.allAuthorsPart{
+    /* border: 1px solid red; */
+    width: 100%;
+    min-height: 700px;
+    background-color: #D3D3D3;
+    /* z-index: -10 */
+}
+
+.allAuthorsTitleDiv{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 30px;
+    background-color: #F5F5F7;  
+}
+
+.allAuthorsTitle{
+    font-family: "Play", serif;
+    font-size: 25px;
+    color: #060629;
+}
+
+.alluthorsDiv{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 30px;
+}
+
+.allAuthorsSingleDiv{
+    border-bottom: 2px solid #a42626;
+    /* background-color: #a42626; */
+    color: white;
+    padding: 3px 7px;
+    /* border-radius: 10px; */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.allAuthorsSingleDiv:hover{
+    border-bottom: 2px solid #151566;
+}
+
+.allAuthorsSingle{
+    font-weight: 500;
+    color: #970C0C;
+}
+
+.allAuthorsSingleDiv:hover .allAuthorsSingle{
+    color: #151566;
+    font-weight: 500;
+}
+
+.allAuthorsButton{
+    color: white;
+    font-weight: 500;
+    background-color: rgb(86, 70, 70);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.allAuthorsButton:hover{
+    background-color: black;
+    color: white;
+}
+
+/* ?????????????????????????????????????? */
+
+.booksAndTitleContainer{
+    width: 100%;
+    z-index: -10;
+    /* border: 1px solid pink; */
+    
+}
+
+.currentAuthorDiv{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 30px;
+    background-color: #F5F5F7;
+}
+
+.currentAuthor{
+    font-family: "Play", serif;
+    font-size: 25px;
+    color: #060629;
+}
+
+.authorsBooksDiv{
+    /* border: 2px solid yellow; */
+    /* position: absolute; */
+    /* z-index: -1; */
+    width: 100%;
+    height: 100%;
+    left: 20%;
+    padding: 10px 30px;
+    background-color: #F5F5F7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 30px;
+}
+
+.singleBookDiv{
+    /* border:  1px solid blue; */
+    /* min-height: 400px;
+    max-height: 500px; */
+    height: 300px;
+    min-width: 28%;
+    background-color: lightgray;
+    border-radius: 15px;
+    /* padding: 15px; */
+    /* margin-bottom: 10px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    overflow: scroll;
+    /* box-shadow: 0px 0px 10px 0px lightgray; */
+}
+
+/* .singleBookDivs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.singleBookContents{
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: #0a0a3a;
+    text-align: center;
+}
+
+.sigleBookTitle{
+    font-size: 21px;
+    font-weight: 600;
+    color: #970C0C;
+    margin: 10px;
+}
