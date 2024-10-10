@@ -1,0 +1,134 @@
+.languagesContainer{
+    /* border: 2px solid red; */
+    min-height: 700px;
+    height: fit-content;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    /* position: relative; */
+    top: 120px;
+    z-index: -1;
+}
+
+.languageSideBar{
+    /* border: 2px solid green; */
+    width: 20%;
+    /* height: 100%; */
+    /* position: absolute; */
+    /* box-shadow: 1px 1px 10px 1px gray; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: -1;
+}
+
+.languageSideTitle{
+    font-family: "Play", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #0e0e4b;
+}
+
+.sideBarLanguagesListDiv{
+    /* border: 1px solid red; */
+    /* width: 500px; */
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: start;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+    padding: 8px;
+    background-color: lightblue;
+    border-radius: 8px;
+}
+
+.sideBarLanguagesSingle{
+    font-family: "Play", serif;
+    color: #060629;
+    font-size: 17px;
+    transition: all 0.1s ease-in-out;
+}
+
+
+
+/* ?????????????????? */
+
+.booksAndTitleContainer{
+    width: 80%;
+    z-index: -10;
+    /* border: 1px solid pink; */
+    
+}
+
+.currentLanguageDiv{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 30px;
+    background-color: #F5F5F7;
+}
+
+.currentLanguage{
+    font-family: "Play", serif;
+    font-size: 25px;
+    color: #060629;
+}
+
+.languagesBooksDiv{
+    /* border: 2px solid yellow; */
+    /* position: absolute; */
+    /* z-index: -1; */
+    width: 100%;
+    height: 100%;
+    left: 20%;
+    padding: 10px 30px;
+    background-color: #F5F5F7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 30px;
+}
+
+.singleBookDiv{
+    /* border:  1px solid blue; */
+    /* min-height: 400px;
+    max-height: 500px; */
+    height: 300px;
+    min-width: 28%;
+    background-color: lightgray;
+    border-radius: 15px;
+    /* padding: 15px; */
+    /* margin-bottom: 10px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    overflow: scroll;
+    /* box-shadow: 0px 0px 10px 0px lightgray; */
+}
+
+/* .singleBookDivs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.singleBookContents{
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: #0a0a3a;
+    text-align: center;
+}
+
+.sigleBookTitle{
+    font-size: 21px;
+    font-weight: 600;
+    color: #970C0C;
+    margin: 10px;
+}

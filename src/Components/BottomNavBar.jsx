@@ -7,10 +7,6 @@ const BottomNavBar = () => {
 
     let location = useLocation()
 
-    // useEffect(() => {
-    //     let path = location.pathname
-    //     // console.log(path);
-    // }) //! Will use later
   return (
     <div className={bottomNavBarStyle.bottomNavBarContainer}>
       <div className={bottomNavBarStyle.sortTitleDiv}>

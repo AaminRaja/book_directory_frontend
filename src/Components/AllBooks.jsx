@@ -1,9 +1,12 @@
 import axios, { all } from 'axios'
 import React, { useEffect, useState } from 'react'
 import allBooksStyle from './AllBooks.module.css'
+import { useNavigate } from 'react-router-dom'
 
 const AllBooks = () => {
     let[allBooks, setAllBooks] = useState([])
+
+    let navigateToSingleBook = useNavigate()
 
     let fetchAllBooks = async() => {
         try {
@@ -23,7 +26,7 @@ const AllBooks = () => {
     <div className={allBooksStyle.allBooksContainer}>
       {allBooks.map((book) => {
         return (
-            <div className={allBooksStyle.singleBookDiv}>
+            <div className={allBooksStyle.singleBookDiv} onClick={() => {navigateToSingleBook(`/singleBook/${book._id}`)}}>
                 <div className={allBooksStyle.singleBookDivs}>
                     <h5 className={`${allBooksStyle.singleBookContents} ${allBooksStyle.sigleBookTitle}`}>{book.title}</h5>
                 </div>
@@ -32,6 +35,9 @@ const AllBooks = () => {
                 </div>
                 <div className={allBooksStyle.singleBookDivs}>
                     <h5 className={`${allBooksStyle.singleBookContents} ${allBooksStyle.singleBookCategory}`}>{book.category}</h5>
+                </div>
+                <div className={allBooksStyle.singleBookDivs}>
+                    <h5 className={`${allBooksStyle.singleBookContents} ${allBooksStyle.singleBookLanguage}`}>{book.language}</h5>
                 </div>
                 <div className={allBooksStyle.singleBookDivs}>
                     <h5 className={`${allBooksStyle.singleBookContents} ${allBooksStyle.singleBookPublisher}`}>{book.publisher}</h5>

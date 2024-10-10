@@ -1,0 +1,55 @@
+.signleBookContainer{
+    border: 2px solid red;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    min-height: 700px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    z-index: -5;
+}
+
+.signleBookDiv{
+    border: 1px solid green;
+    margin-top: 50px;
+    border-radius: 10px;
+    width: 40%;
+    height: fit-content;
+    padding: 20px;
+}
+
+.signleBookDivs{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.title{
+    font-family: "Play", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #970C0C;
+}
+
+.left{
+    /* border: 1px solid green; */
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.right{
+    /* border: 1px solid yellow; */
+    width: 75%;
+}
+
+.content{
+    font-family: "Play", serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: #151566;
+}
