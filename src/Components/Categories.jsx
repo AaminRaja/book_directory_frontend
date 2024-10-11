@@ -3,7 +3,7 @@ import categoryStyle from './Categories.module.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const Categories = () => {
+const Categories = ({fixPreviousPath}) => {
   let[categoriesList, setCategoriesList] = useState([])
   let[categoryBooksList, setCategoryBookList] = useState([])
   let[currentCategory, setCurrentCategory] = useState()
@@ -32,6 +32,11 @@ const Categories = () => {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  let toSingleBook = (id) => {
+    fixPreviousPath('/categories')
+    navigateToSingleBook(`/singleBook/${id}`)
   }
 
   useEffect(() => {
@@ -78,7 +83,7 @@ const Categories = () => {
               <div className={categoryStyle.categoryiesBooksDiv}>
                   {categoryBooksList?.map((book) => {
                       return (
-                          <div className={categoryStyle.singleBookDiv} onClick={() => {navigateToSingleBook(`/singleBook/${book._id}`)}}>
+                          <div className={categoryStyle.singleBookDiv} onClick={() => {toSingleBook(book._id)}}>
                               <div className={categoryStyle.singleBookDivs}>
                                   <h5 className={`${categoryStyle.singleBookContents} ${categoryStyle.sigleBookTitle}`}>{book.title}</h5>
                               </div>

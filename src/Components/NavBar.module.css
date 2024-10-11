@@ -63,3 +63,7 @@
     padding: 0px 15px;
     cursor: pointer;
 }
+
+.addBookBtn{
+    background-color: #045804;
+}

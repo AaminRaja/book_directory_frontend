@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import allBooksStyle from './AllBooks.module.css'
 import { useNavigate } from 'react-router-dom'
 
-const AllBooks = () => {
+const AllBooks = ({fixPreviousPath}) => {
     let[allBooks, setAllBooks] = useState([])
 
     let navigateToSingleBook = useNavigate()
@@ -19,6 +19,11 @@ const AllBooks = () => {
         }
     }
 
+    let toSingleBook = (id) => {
+        fixPreviousPath('/')
+        navigateToSingleBook(`/singleBook/${id}`)
+    }
+
     useEffect(() => {
         fetchAllBooks()
     }, [])
@@ -26,7 +31,7 @@ const AllBooks = () => {
     <div className={allBooksStyle.allBooksContainer}>
       {allBooks.map((book) => {
         return (
-            <div className={allBooksStyle.singleBookDiv} onClick={() => {navigateToSingleBook(`/singleBook/${book._id}`)}}>
+            <div className={allBooksStyle.singleBookDiv} onClick={() => {toSingleBook(book._id)}}>
                 <div className={allBooksStyle.singleBookDivs}>
                     <h5 className={`${allBooksStyle.singleBookContents} ${allBooksStyle.sigleBookTitle}`}>{book.title}</h5>
                 </div>

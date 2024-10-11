@@ -1,0 +1,136 @@
+.newBookContainer{
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    min-height: 700px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    z-index: -5;
+}
+
+.newBookDiv{
+    /* border: 1px solid green; */
+    box-shadow: 0px 0px 5px 1px lightgray;
+    margin-top: 37px;
+    border-radius: 10px;
+    width: 40%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+/* 
+.titleDiv, .form{
+    border: 1px solid red;
+} */
+
+.title{
+    color: #970C0C;
+    font-size: 25px;
+    font-family: "Play", serif;
+}
+
+.form{
+    /* border: 1px solid black; */
+    width: 100%;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.inputsDiv{
+    width: 95%;
+    /* border: 1px solid green; */
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputsDivLeft, .inputsDivRight{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputDiv{
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.inputId{
+    margin-bottom: 3px;
+    font-weight: 500;
+    color: #050528;
+}
+
+.input{
+    height: 35px;
+    width: 100%;
+    outline: none;
+    padding: 3px;
+    border: 1.5px solid lightgray;
+    border-radius: 5px;
+}
+
+.input::placeholder{
+    color: black;
+}
+
+/* ????? */
+
+.errorDiv{
+    /* border: 1px solid blue; */
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error{
+    color: red;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* ????????? */
+
+.buttonsDiv{
+    width: 100%;
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button{
+    height: 30px;
+    width: 80px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.goBackButton{
+    background-color: #101053;
+}
+
+.resetButton{
+    background-color: gray;
+}
+
+.saveButton{
+    background-color: #66CDAA;
+}

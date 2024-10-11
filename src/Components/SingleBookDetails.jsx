@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import singleBookStyle from './SingleBookDetails.module.css'
 import axios from 'axios'
 
-const SingleBookDetails = () => {
+const SingleBookDetails = ({previousPath, fixPreviousPath}) => {
     let[currentBook, setCurrentBook] = useState()
 
     let {id} = useParams()
+
+    let navigateToBack = useNavigate()
+    let navigateToUpdate = useNavigate()
 
     let fetchBookDetails = async() => {
         try {
@@ -15,6 +18,23 @@ const SingleBookDetails = () => {
             setCurrentBook(response.data.book)
         } catch (error) {
             console.log(error);
+        }
+    }
+
+    let goBack = () => {
+        fixPreviousPath('')
+        navigateToBack(previousPath)
+    }
+
+    let toupdate = () => {
+        navigateToUpdate(`/updateBook/${id}`)
+    }
+
+    let deleteBook = async() => {
+        let {data} = await axios.delete(`http://192.168.0.117:5100/book/deleteBook/${id}`)
+        // console.log(data);
+        if(!data.error){
+            navigateToBack(previousPath)
         }
     }
 
@@ -29,7 +49,8 @@ const SingleBookDetails = () => {
   return (
     <div className={singleBookStyle.signleBookContainer}>
       <div className={singleBookStyle.signleBookDiv}>
-        <div className={singleBookStyle.signleBookDivs}>
+        
+        <div className={`${singleBookStyle.signleBookDivs} ${singleBookStyle.titleDiv}`}>
           <h4 className={singleBookStyle.title}>{currentBook?.title}</h4>
         </div>
         <div className={singleBookStyle.signleBookDivs}>
@@ -43,7 +64,7 @@ const SingleBookDetails = () => {
               <h5 className={singleBookStyle.content}>{currentBook?.author}</h5>
           </div>
         </div>
-        <div className={singleBookStyle.signleBookDivs}>
+        <div className ={singleBookStyle.signleBookDivs}>
           <div className={singleBookStyle.left}>
               <h5 className={singleBookStyle.content}>Category</h5>
           </div>
@@ -95,7 +116,7 @@ const SingleBookDetails = () => {
               <h5>:</h5>
           </div>
           <div className={singleBookStyle.right}>
-              <h5 className={singleBookStyle.content}>{currentBook?.price}</h5>
+              <h5 className={singleBookStyle.content}>Rs.{currentBook?.price}</h5>
           </div>
         </div>
         <div className={singleBookStyle.signleBookDivs}>
@@ -110,9 +131,10 @@ const SingleBookDetails = () => {
           </div>
         </div>
 
-        <div className={singleBookStyle.signleBookDivs}>
-          <button>UPDATE</button>
-          <button>DELETE</button>
+        <div className={`${singleBookStyle.signleBookDivs} ${singleBookStyle.buttonsDiv}`}>
+          <button onClick={goBack} className={`${singleBookStyle.button} ${singleBookStyle.goBack}`}>GO BACK</button>
+          <button onClick={toupdate} className={`${singleBookStyle.button} ${singleBookStyle.update}`}>UPDATE</button>
+          <button onClick={deleteBook} className={`${singleBookStyle.button} ${singleBookStyle.delete}`}>DELETE</button>
         </div>
       </div>
     </div>

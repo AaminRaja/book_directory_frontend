@@ -3,7 +3,7 @@ import languageStyle from './Languages.module.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const Languages = () => {
+const Languages = ({fixPreviousPath}) => {
   let[languagesList, setLanguagesList] = useState([])
   let[languageBooksList, setLanguageBooksList] = useState([])
   let[currentLanguage, setCurrentLanguage] = useState()
@@ -31,6 +31,11 @@ const Languages = () => {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  let toSingleBook = (id) => {
+    fixPreviousPath('/languages')
+    navigateToSingleBook(`/singleBook/${id}`)
   }
 
   useEffect(() => {
@@ -76,7 +81,7 @@ const Languages = () => {
               <div className={languageStyle.languagesBooksDiv}>
                   {languageBooksList?.map((book) => {
                       return (
-                          <div className={languageStyle.singleBookDiv} onClick={() => {navigateToSingleBook(`/singleBook/${book._id}`)}}>
+                          <div className={languageStyle.singleBookDiv} onClick={() => {toSingleBook(book._id)}}>
                               <div className={languageStyle.singleBookDivs}>
                                   <h5 className={`${languageStyle.singleBookContents} ${languageStyle.sigleBookTitle}`}>{book.title}</h5>
                               </div>

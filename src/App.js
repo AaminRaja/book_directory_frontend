@@ -10,20 +10,35 @@ import Publishers from './Components/Publishers';
 import { useEffect, useState } from 'react';
 import Authors from './Components/Authors';
 import SingleBookDetails from './Components/SingleBookDetails';
+import UpdateSection from './Components/UpdateSection';
+import AddABook from './Components/AddABook';
 
 function App() {
+  let [previousPath, setPrevPath] = useState()
+  // let[addingBook, setAddingBook] = useState(false)
+
+  let fixPreviousPath = (path) => {
+    setPrevPath(path)
+  }
+
+  // let fixAddingBook = (data) => {
+  //   setAddingBook(data)
+  // }
+
   return (
     <div>
       <BrowserRouter>
-        <NavBar />
+        <NavBar fixPreviousPath={fixPreviousPath} />
         <BottomNavBar />
         <Routes>
-          <Route path="/" element={<AllBooks />} />
-          <Route path='/authors' element={<Authors />} />
-          <Route path='/categories' element={<Categories />} />
-          <Route path='/languages' element={<Languages />} />
-          <Route path='/publishers' element={<Publishers />} />
-          <Route path='/singleBook/:id' element={<SingleBookDetails />} />
+          <Route path="/" element={<AllBooks fixPreviousPath={fixPreviousPath} />} />
+          <Route path='/authors' element={<Authors fixPreviousPath={fixPreviousPath} />} />
+          <Route path='/categories' element={<Categories fixPreviousPath={fixPreviousPath} />} />
+          <Route path='/languages' element={<Languages fixPreviousPath={fixPreviousPath} />} />
+          <Route path='/publishers' element={<Publishers fixPreviousPath={fixPreviousPath} />} />
+          <Route path='/singleBook/:id' element={<SingleBookDetails previousPath={previousPath} fixPreviousPath={fixPreviousPath} />} />
+          <Route path='/updateBook/:id' element={<UpdateSection previousPath={previousPath} />} />
+          <Route path='/addNewBook' element={<AddABook previousPath={previousPath} />} />
         </Routes>
       </BrowserRouter>
     </div>

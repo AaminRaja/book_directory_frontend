@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import authorsStyle from './Authors.module.css'
 import { useNavigate } from 'react-router-dom'
 
-const Authors = () => {
+const Authors = ({fixPreviousPath}) => {
     let[tenAuthorsList, setTenAuthorsList] = useState([])
     let[authorsList, setAuthorsList] = useState([])
     let[currentAuthor, setCurrentAuthor] = useState()
@@ -54,6 +54,10 @@ const Authors = () => {
 
     let fetchAllAuthors = async() => {
         setAllAuthorsShow(true)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
         try {
             let {data} = await axios.get(`http://192.168.0.117:5100/book/allAuthors`)
             console.log(data);
@@ -76,6 +80,11 @@ const Authors = () => {
         } catch (error) {
             console.log(error);
         }
+    }
+
+    let toSingleBook = (id) => {
+        fixPreviousPath('/authors')
+        navigateToSingleBook(`/singleBook/${id}`)
     }
 
     useEffect(() => {
@@ -169,7 +178,7 @@ const Authors = () => {
             <div className={authorsStyle.authorsBooksDiv}>
                 {authorBooks?.map((book) => {
                     return (
-                        <div className={authorsStyle.singleBookDiv} onClick={() => {navigateToSingleBook(`/singleBook/${book._id}`)}}>
+                        <div className={authorsStyle.singleBookDiv} onClick={() => {toSingleBook(book._id)}}>
                             <div className={authorsStyle.singleBookDivs}>
                                 <h5 className={`${authorsStyle.singleBookContents} ${authorsStyle.sigleBookTitle}`}>{book.title}</h5>
                             </div>

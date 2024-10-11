@@ -3,7 +3,7 @@ import publisherStyle from './Publishers.module.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const Publishers = () => {
+const Publishers = ({fixPreviousPath}) => {
   let[publisherList, setPublisherList] = useState([])
   let[publisherBooksList, setPublisherBookList] = useState([])
   let[currentPublisher, setCurrentPublisher] = useState()
@@ -32,6 +32,11 @@ const Publishers = () => {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  let toSingleBook = (id) => {
+    fixPreviousPath('/publishers')
+    navigateToSingleBook(`/singleBook/${id}`)
   }
 
   useEffect(() => {
@@ -77,7 +82,7 @@ const Publishers = () => {
               <div className={publisherStyle.publishersBooksDiv}>
                   {publisherBooksList?.map((book) => {
                       return (
-                          <div className={publisherStyle.singleBookDiv} onClick={() => {navigateToSingleBook(`/singleBook/${book._id}`)}}>
+                          <div className={publisherStyle.singleBookDiv} onClick={() => {toSingleBook(book._id)}}>
                               <div className={publisherStyle.singleBookDivs}>
                                   <h5 className={`${publisherStyle.singleBookContents} ${publisherStyle.sigleBookTitle}`}>{book.title}</h5>
                               </div>
