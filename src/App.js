@@ -12,26 +12,43 @@ import Authors from './Components/Authors';
 import SingleBookDetails from './Components/SingleBookDetails';
 import UpdateSection from './Components/UpdateSection';
 import AddABook from './Components/AddABook';
+import SearchResultPage from './Components/SearchResultPage';
 
 function App() {
   let [previousPath, setPrevPath] = useState()
+  let [booksBySearchInApp, setBooksBySearchInApp] = useState([])
+  let [noDataOrNotValidInputError, setNoDataOrNotValidinputError] = useState(false)
   // let[addingBook, setAddingBook] = useState(false)
 
   let fixPreviousPath = (path) => {
     setPrevPath(path)
   }
 
+  let getBooksFromNav = (booksFromNavBar) => {
+    console.log(booksFromNavBar);
+    setBooksBySearchInApp([...booksFromNavBar])
+  }
+
+  let getErrorFromNav = (errorStatus) => {
+    setNoDataOrNotValidinputError(errorStatus)
+  }
+
   // let fixAddingBook = (data) => {
   //   setAddingBook(data)
   // }
 
+  useEffect(() => {
+    console.log(booksBySearchInApp);
+  })
+
   return (
     <div>
       <BrowserRouter>
-        <NavBar fixPreviousPath={fixPreviousPath} />
+        <NavBar fixPreviousPath={fixPreviousPath} getBooksFromNav={getBooksFromNav} getErrorFromNav={getErrorFromNav} />
         <BottomNavBar />
         <Routes>
-          <Route path="/" element={<AllBooks fixPreviousPath={fixPreviousPath} />} />
+          <Route path="/" element={<AllBooks fixPreviousPath={fixPreviousPath} noDataOrNotValidInputError={noDataOrNotValidInputError} />} />
+          <Route path='/searchResultPage' element={<SearchResultPage fixPreviousPath={fixPreviousPath} booksBySearchInApp={booksBySearchInApp} />} />
           <Route path='/authors' element={<Authors fixPreviousPath={fixPreviousPath} />} />
           <Route path='/categories' element={<Categories fixPreviousPath={fixPreviousPath} />} />
           <Route path='/languages' element={<Languages fixPreviousPath={fixPreviousPath} />} />

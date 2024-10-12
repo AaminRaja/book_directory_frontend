@@ -1,34 +1,5 @@
-.allBooksContainer{
+.searchResultContainer{
     /* border: 1px solid green; */
-    min-height: 700px;
-    width: 100%;
-    background-color: #F5F5F7;
-    display: flex;
-    position: absolute;
-    z-index: -1;
-}
-
-.errorMsgDiv{
-    /* border: 1px solid red; */
-    padding: 50px;
-    min-height: 700px;
-    width: 100%;
-    background-color: #F5F5F7;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 120px;
-    z-index: -1;
-}
-
-.errorMsg{
-    color: red;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.allBookDiv{
-    /* border: 1px solid red; */
     padding: 50px 50px;
     min-height: 700px;
     width: 100%;

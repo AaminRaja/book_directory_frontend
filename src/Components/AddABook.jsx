@@ -41,6 +41,7 @@ const AddABook = ({previousPath}) => {
             trimmedBookDetails.price && trimmedBookDetails.numberOfPieces){
                 AddABook(trimmedBookDetails)
                 setBookDetails({title:"", author:"", category:"", language:"", publisher:"", edition:"", price:"", numberOfPieces:""})
+                navigateToBack(`${previousPath}`)
         }else{
             setFillAllError(true)
         }

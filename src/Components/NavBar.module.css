@@ -30,6 +30,7 @@
 }
 
 .inputBtnDiv{
+    /* border: 1px solid red; */
     margin-right: 50px;
     display: flex;
     align-items: center;
